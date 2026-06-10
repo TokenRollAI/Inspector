@@ -12,9 +12,21 @@
 
 ![请求 Body 拆解](docs/screenshot-request-anatomy.png)
 
+**Context 拆解概览** —— 控制项、三大块占比条、messages 内部内容块占比、缓存断点：
+
+![Context 拆解](docs/screenshot-context-detail.png)
+
 **Agent loop 分组** —— 33 条消息自动切成 4 个 Turn，识别出 user 消息中的 tool_result 回填与 system-reminder 注入，并标记用户中断：
 
 ![Turn 分组](docs/screenshot-turn-grouping.png)
+
+**工具参数树** —— 每个 tool 可切换「描述 / 参数树 / 原始 schema」，参数树展示类型、必填与说明：
+
+![参数树](docs/screenshot-schema-tree.png)
+
+**SSE 重组结果** —— usage 指标卡（含 cache 读写/命中率/成本估算）、stop_reason、把 delta 拼回的完整内容块：
+
+![SSE 重组](docs/screenshot-sse-recon.png)
 
 ## 功能
 
