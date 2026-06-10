@@ -6,6 +6,16 @@
 
 把 Claude API（`/v1/messages`）的请求 Body 或返回的原始 SSE 流粘贴进去，可视化地看清一次请求的 context 由什么组成、一次响应的流由什么构成。所有解析都在浏览器本地完成，**不上传任何数据**。
 
+## 截图
+
+**请求 Body 拆解** —— 顶层参数、体量分布、system / tools 逐块展开（下图为一个 304KB 真实 Claude Code 请求体的解析结果）：
+
+![请求 Body 拆解](docs/screenshot-request-anatomy.png)
+
+**Agent loop 分组** —— 33 条消息自动切成 4 个 Turn，识别出 user 消息中的 tool_result 回填与 system-reminder 注入，并标记用户中断：
+
+![Turn 分组](docs/screenshot-turn-grouping.png)
+
 ## 功能
 
 ### ① 解析请求 Body
